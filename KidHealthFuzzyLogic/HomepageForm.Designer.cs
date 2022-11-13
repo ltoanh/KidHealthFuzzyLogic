@@ -87,6 +87,7 @@ namespace KidHealthFuzzyLogic
             // rbtnMale
             // 
             this.rbtnMale.AutoSize = true;
+            this.rbtnMale.Checked = true;
             this.rbtnMale.Location = new System.Drawing.Point(109, 109);
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(47, 17);
@@ -102,7 +103,6 @@ namespace KidHealthFuzzyLogic
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(39, 17);
             this.rbtnFemale.TabIndex = 6;
-            this.rbtnFemale.TabStop = true;
             this.rbtnFemale.Text = "Nữ";
             this.rbtnFemale.UseVisualStyleBackColor = true;
             // 

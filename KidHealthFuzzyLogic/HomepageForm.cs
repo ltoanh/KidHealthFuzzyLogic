@@ -24,6 +24,9 @@ namespace KidHealthFuzzyLogic
             {
                 Common.Age = Int32.Parse(txtAge.Text.Trim());
                 Common.Gender = rbtnMale.Checked ? 0 : 1;
+
+                SystemForm systemForm = new SystemForm();
+                systemForm.Show();
             }
             catch (Exception ex)
             {
