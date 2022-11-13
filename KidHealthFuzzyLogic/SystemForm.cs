@@ -267,9 +267,35 @@ namespace KidHealthFuzzyLogic
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
+            btnExecute.Enabled = false;
+            try
+            {
+                Common.ChieuCao = Double.Parse(txtChieuCao.Text.Trim());
+                Common.CanNang = Double.Parse(txtCanNang.Text.Trim());
+
+                if(Common.ChieuCao <= 0)
+                {
+                    throw new Exception("Chiều cao phải lớn hơn 0cm");
+                }
+
+                if(Common.CanNang <= 0)
+                {
+                    throw new Exception("Cân nặng phải lớn hơn 0kg");
+                }
+
             // tính các chỉ số
             CalcVanDongTho();
             CalcVanDongTinh();
+
+                FuzzyLogicForm fuzzyForm = new FuzzyLogicForm();
+                fuzzyForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btnExecute.Enabled = true;
+
         }
     }
 }
