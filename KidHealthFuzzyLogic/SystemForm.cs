@@ -283,9 +283,9 @@ namespace KidHealthFuzzyLogic
                     throw new Exception("Cân nặng phải lớn hơn 0kg");
                 }
 
-                // tính các chỉ số
-                CalcVanDongTho();
-                CalcVanDongTinh();
+            // tính các chỉ số
+            CalcVanDongTho();
+            CalcVanDongTinh();
 
                 FuzzyLogicForm fuzzyForm = new FuzzyLogicForm();
                 fuzzyForm.Show();
