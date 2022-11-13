@@ -42,11 +42,11 @@ namespace KidHealthFuzzyLogic
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 31);
+            this.label1.Location = new System.Drawing.Point(27, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 16);
+            this.label1.Size = new System.Drawing.Size(352, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hệ thống đánh giá sự phát triển của trẻ em";
+            this.label1.Text = "Hệ thống đánh giá sự phát triển của trẻ em 2-5 tuổi";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnExecute
