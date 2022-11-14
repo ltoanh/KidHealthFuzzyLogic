@@ -165,7 +165,14 @@ namespace KidHealthFuzzyLogic
         #endregion
 
         #region Giải mờ
-        // Đánh giá phát triển
+        // Đánh giá phát triển (giải mờ)
+        public static Dictionary<string, double> lsPhatTrienDefuzzy = new Dictionary<string, double>(){
+            {"PT_K", 0.0},
+            {"PT_HK", 0.0 },
+            {"PT_HT", 0.0 },
+            {"PT_T", 0.0 },
+        };
+        // Kết quả thực hiện giải mờ (hiển thị đồ thị)
         public static Dictionary<string, double> lsPhatTrienResult = new Dictionary<string, double>(){
             {"PT_K", 0.0},
             {"PT_HK", 0.0 },
