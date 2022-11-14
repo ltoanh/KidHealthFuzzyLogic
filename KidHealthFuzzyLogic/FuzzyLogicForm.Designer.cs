@@ -39,15 +39,15 @@ namespace KidHealthFuzzyLogic
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuzzyLogicForm));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuzzyLogicForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_PT_KT = new System.Windows.Forms.TextBox();
+            this.txt_PT_K = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_PT_K = new System.Windows.Forms.TextBox();
+            this.txt_PT_HK = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_PT_HT = new System.Windows.Forms.TextBox();
@@ -57,23 +57,23 @@ namespace KidHealthFuzzyLogic
             this.label10 = new System.Windows.Forms.Label();
             this.chartRule = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnShowRule = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chartVDT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartVDTH = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartChieuCao = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartCanNang = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDefuzzyTS = new System.Windows.Forms.Label();
-            this.txtDefuzzyMS = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.taFinalResult = new System.Windows.Forms.RichTextBox();
             this.chartDefuzzy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.taFinalResult = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtResult = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDefuzzyMS = new System.Windows.Forms.Label();
+            this.txtDefuzzyTS = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartRule)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,8 +82,8 @@ namespace KidHealthFuzzyLogic
             ((System.ComponentModel.ISupportInitialize)(this.chartChieuCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCanNang)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDefuzzy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -98,19 +98,19 @@ namespace KidHealthFuzzyLogic
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 50);
+            this.label3.Location = new System.Drawing.Point(6, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Không tốt = MAX (";
+            this.label3.Text = "Hơi kém    = MAX (";
             // 
-            // txt_PT_KT
+            // txt_PT_K
             // 
-            this.txt_PT_KT.Enabled = false;
-            this.txt_PT_KT.Location = new System.Drawing.Point(102, 47);
-            this.txt_PT_KT.Name = "txt_PT_KT";
-            this.txt_PT_KT.Size = new System.Drawing.Size(285, 20);
-            this.txt_PT_KT.TabIndex = 7;
+            this.txt_PT_K.Enabled = false;
+            this.txt_PT_K.Location = new System.Drawing.Point(102, 47);
+            this.txt_PT_K.Name = "txt_PT_K";
+            this.txt_PT_K.Size = new System.Drawing.Size(285, 20);
+            this.txt_PT_K.TabIndex = 7;
             // 
             // label4
             // 
@@ -130,18 +130,18 @@ namespace KidHealthFuzzyLogic
             this.label5.TabIndex = 11;
             this.label5.Text = ")";
             // 
-            // txt_PT_K
+            // txt_PT_HK
             // 
-            this.txt_PT_K.Enabled = false;
-            this.txt_PT_K.Location = new System.Drawing.Point(102, 77);
-            this.txt_PT_K.Name = "txt_PT_K";
-            this.txt_PT_K.Size = new System.Drawing.Size(285, 20);
-            this.txt_PT_K.TabIndex = 10;
+            this.txt_PT_HK.Enabled = false;
+            this.txt_PT_HK.Location = new System.Drawing.Point(102, 77);
+            this.txt_PT_HK.Name = "txt_PT_HK";
+            this.txt_PT_HK.Size = new System.Drawing.Size(285, 20);
+            this.txt_PT_HK.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 80);
+            this.label6.Location = new System.Drawing.Point(6, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 13);
             this.label6.TabIndex = 9;
@@ -212,18 +212,18 @@ namespace KidHealthFuzzyLogic
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnShowRule);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.chartRule);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txt_PT_KT);
+            this.groupBox1.Controls.Add(this.txt_PT_K);
             this.groupBox1.Controls.Add(this.txt_PT_T);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txt_PT_K);
+            this.groupBox1.Controls.Add(this.txt_PT_HK);
             this.groupBox1.Controls.Add(this.txt_PT_HT);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label8);
@@ -234,14 +234,15 @@ namespace KidHealthFuzzyLogic
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cơ sở suy diễn";
             // 
-            // button1
+            // btnShowRule
             // 
-            this.button1.Location = new System.Drawing.Point(330, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Hiển thị luật";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShowRule.Location = new System.Drawing.Point(330, 18);
+            this.btnShowRule.Name = "btnShowRule";
+            this.btnShowRule.Size = new System.Drawing.Size(75, 23);
+            this.btnShowRule.TabIndex = 19;
+            this.btnShowRule.Text = "Hiển thị luật";
+            this.btnShowRule.UseVisualStyleBackColor = true;
+            this.btnShowRule.Click += new System.EventHandler(this.btnShowRule_Click);
             // 
             // groupBox2
             // 
@@ -319,64 +320,34 @@ namespace KidHealthFuzzyLogic
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giải mờ theo trọng tâm";
             // 
-            // pictureBox1
+            // chartDefuzzy
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            chartArea6.Name = "ChartArea1";
+            this.chartDefuzzy.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartDefuzzy.Legends.Add(legend6);
+            this.chartDefuzzy.Location = new System.Drawing.Point(9, 248);
+            this.chartDefuzzy.Name = "chartDefuzzy";
+            this.chartDefuzzy.Size = new System.Drawing.Size(403, 184);
+            this.chartDefuzzy.TabIndex = 20;
             // 
-            // label1
+            // taFinalResult
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(157, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "=";
+            this.taFinalResult.Enabled = false;
+            this.taFinalResult.Location = new System.Drawing.Point(66, 163);
+            this.taFinalResult.Name = "taFinalResult";
+            this.taFinalResult.Size = new System.Drawing.Size(346, 67);
+            this.taFinalResult.TabIndex = 8;
+            this.taFinalResult.Text = "";
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(174, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(238, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "_________________________________";
-            // 
-            // txtDefuzzyTS
-            // 
-            this.txtDefuzzyTS.AutoSize = true;
-            this.txtDefuzzyTS.Location = new System.Drawing.Point(177, 58);
-            this.txtDefuzzyTS.Name = "txtDefuzzyTS";
-            this.txtDefuzzyTS.Size = new System.Drawing.Size(13, 13);
-            this.txtDefuzzyTS.TabIndex = 3;
-            this.txtDefuzzyTS.Text = "0";
-            // 
-            // txtDefuzzyMS
-            // 
-            this.txtDefuzzyMS.AutoSize = true;
-            this.txtDefuzzyMS.Location = new System.Drawing.Point(177, 89);
-            this.txtDefuzzyMS.Name = "txtDefuzzyMS";
-            this.txtDefuzzyMS.Size = new System.Drawing.Size(13, 13);
-            this.txtDefuzzyMS.TabIndex = 4;
-            this.txtDefuzzyMS.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label12.Location = new System.Drawing.Point(44, 124);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 20);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "=";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 166);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Kết quả:";
             // 
             // txtResult
             // 
@@ -388,34 +359,64 @@ namespace KidHealthFuzzyLogic
             this.txtResult.TabIndex = 6;
             this.txtResult.Text = "0";
             // 
-            // label13
+            // label12
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 166);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Kết quả:";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.Location = new System.Drawing.Point(44, 124);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "=";
             // 
-            // taFinalResult
+            // txtDefuzzyMS
             // 
-            this.taFinalResult.Enabled = false;
-            this.taFinalResult.Location = new System.Drawing.Point(66, 163);
-            this.taFinalResult.Name = "taFinalResult";
-            this.taFinalResult.Size = new System.Drawing.Size(346, 67);
-            this.taFinalResult.TabIndex = 8;
-            this.taFinalResult.Text = "";
+            this.txtDefuzzyMS.AutoSize = true;
+            this.txtDefuzzyMS.Location = new System.Drawing.Point(177, 89);
+            this.txtDefuzzyMS.Name = "txtDefuzzyMS";
+            this.txtDefuzzyMS.Size = new System.Drawing.Size(13, 13);
+            this.txtDefuzzyMS.TabIndex = 4;
+            this.txtDefuzzyMS.Text = "0";
             // 
-            // chartDefuzzy
+            // txtDefuzzyTS
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartDefuzzy.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartDefuzzy.Legends.Add(legend6);
-            this.chartDefuzzy.Location = new System.Drawing.Point(9, 248);
-            this.chartDefuzzy.Name = "chartDefuzzy";
-            this.chartDefuzzy.Size = new System.Drawing.Size(403, 184);
-            this.chartDefuzzy.TabIndex = 20;
+            this.txtDefuzzyTS.AutoSize = true;
+            this.txtDefuzzyTS.Location = new System.Drawing.Point(177, 58);
+            this.txtDefuzzyTS.Name = "txtDefuzzyTS";
+            this.txtDefuzzyTS.Size = new System.Drawing.Size(13, 13);
+            this.txtDefuzzyTS.TabIndex = 3;
+            this.txtDefuzzyTS.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(174, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(238, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "_________________________________";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(157, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "=";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FuzzyLogicForm
             // 
@@ -437,8 +438,8 @@ namespace KidHealthFuzzyLogic
             ((System.ComponentModel.ISupportInitialize)(this.chartCanNang)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDefuzzy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,10 +448,10 @@ namespace KidHealthFuzzyLogic
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_PT_KT;
+        private System.Windows.Forms.TextBox txt_PT_K;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_PT_K;
+        private System.Windows.Forms.TextBox txt_PT_HK;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_PT_HT;
@@ -465,7 +466,7 @@ namespace KidHealthFuzzyLogic
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVDTH;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartChieuCao;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCanNang;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnShowRule;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDefuzzy;
