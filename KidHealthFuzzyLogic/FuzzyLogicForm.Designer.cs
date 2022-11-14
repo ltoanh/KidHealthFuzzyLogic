@@ -64,7 +64,7 @@ namespace KidHealthFuzzyLogic
             this.chartChieuCao = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartCanNang = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chartDefuzzy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartResult = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.taFinalResult = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace KidHealthFuzzyLogic
             ((System.ComponentModel.ISupportInitialize)(this.chartChieuCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCanNang)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDefuzzy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -303,7 +303,7 @@ namespace KidHealthFuzzyLogic
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chartDefuzzy);
+            this.groupBox3.Controls.Add(this.chartResult);
             this.groupBox3.Controls.Add(this.taFinalResult);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txtResult);
@@ -320,16 +320,16 @@ namespace KidHealthFuzzyLogic
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giải mờ theo trọng tâm";
             // 
-            // chartDefuzzy
+            // chartResult
             // 
             chartArea6.Name = "ChartArea1";
-            this.chartDefuzzy.ChartAreas.Add(chartArea6);
+            this.chartResult.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
-            this.chartDefuzzy.Legends.Add(legend6);
-            this.chartDefuzzy.Location = new System.Drawing.Point(9, 248);
-            this.chartDefuzzy.Name = "chartDefuzzy";
-            this.chartDefuzzy.Size = new System.Drawing.Size(403, 184);
-            this.chartDefuzzy.TabIndex = 20;
+            this.chartResult.Legends.Add(legend6);
+            this.chartResult.Location = new System.Drawing.Point(9, 248);
+            this.chartResult.Name = "chartResult";
+            this.chartResult.Size = new System.Drawing.Size(403, 184);
+            this.chartResult.TabIndex = 20;
             // 
             // taFinalResult
             // 
@@ -438,7 +438,7 @@ namespace KidHealthFuzzyLogic
             ((System.ComponentModel.ISupportInitialize)(this.chartCanNang)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDefuzzy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -469,7 +469,7 @@ namespace KidHealthFuzzyLogic
         private System.Windows.Forms.Button btnShowRule;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDefuzzy;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartResult;
         private System.Windows.Forms.RichTextBox taFinalResult;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label txtResult;
