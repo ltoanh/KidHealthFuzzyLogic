@@ -51,9 +51,17 @@ namespace KidHealthFuzzyLogic
 
         // Vận động tinh
         public static Dictionary<string, string> lsVDTName = new Dictionary<string, string>(){
-            {"VDTH_RK", "Rất kém"},
-            {"VDTH_K", "Kém" },
-            {"VDTH_BT", "Bình thường" },
+            {"VDT_RK", "Rất kém"},
+            {"VDT_K", "Kém" },
+            {"VDT_BT", "Bình thường" },
+        };
+
+        // Đánh giá phát triển
+        public static Dictionary<string, string> lsPhatTrienName = new Dictionary<string, string>(){
+            {"PT_K", "Kém"},
+            {"PT_HK", "Hơi Kém" },
+            {"PT_HT", "Hơi tốt" },
+            {"PT_T", "Tốt" },
         };
 
         #endregion
@@ -97,12 +105,30 @@ namespace KidHealthFuzzyLogic
             {"VDTH_BT", new List<double>(){ 45, 48, 60 } },
         };
 
-        // 3. Vận động tinh: Rất kém (VDTH_RK), Kém (VDTH_K), Bình thường (VDTH_BT)
+        // 4. Vận động tinh: Rất kém (VDTH_RK), Kém (VDTH_K), Bình thường (VDTH_BT)
         // Tọa độ điểm: 
         public static Dictionary<string, List<double>> lsVDTPoint2 = new Dictionary<string, List<double>>(){
-            {"VDTH_RK", new List<double>(){ 0, 33, 35 } },
-            {"VDTH_K", new List<double>(){ 33, 35, 43, 45 } },
-            {"VDTH_BT", new List<double>(){ 43, 45, 60 } },
+            {"VDT_RK", new List<double>(){ 0, 33, 35 } },
+            {"VDT_K", new List<double>(){ 33, 35, 43, 45 } },
+            {"VDT_BT", new List<double>(){ 43, 45, 60 } },
+        };
+
+        // 5. Phát triển
+        // Kết quả dùng để đánh giá sự phát triển theo từng tập luật
+        public static Dictionary<string, List<double>> lsPhatTrienRule = new Dictionary<string, List<double>>()
+        {
+            {"PT_K", new List<double>(){ } },
+            {"PT_HK", new List<double>(){ } },
+            {"PT_HT", new List<double>(){ } },
+            {"PT_T", new List<double>(){ } }
+        };
+        // Tọa độ điểm:
+        public static Dictionary<string, List<double>> lsPhatTrienPoint = new Dictionary<string, List<double>>()
+        {
+            {"PT_K", new List<double>(){0.0, 0.2, 0.4} },
+            {"PT_HK", new List<double>(){0.2, 0.4, 0.6} },
+            {"PT_HT", new List<double>(){0.4, 0.6, 0.8} },
+            {"PT_T", new List<double>(){0.6, 0.8, 1} }
         };
 
         #endregion
@@ -131,12 +157,21 @@ namespace KidHealthFuzzyLogic
         };
         // Vận động tinh
         public static Dictionary<string, double> lsFuzzificationVDT = new Dictionary<string, double>(){
-            {"VDTH_RK", 0.0 },
-            {"VDTH_K", 0.0 },
-            {"VDTH_BT", 0.0 },
+            {"VDT_RK", 0.0 },
+            {"VDT_K", 0.0 },
+            {"VDT_BT", 0.0 },
         };
 
         #endregion
 
+        #region Giải mờ
+        // Đánh giá phát triển
+        public static Dictionary<string, double> lsPhatTrienResult = new Dictionary<string, double>(){
+            {"PT_K", 0.0},
+            {"PT_HK", 0.0 },
+            {"PT_HT", 0.0 },
+            {"PT_T", 0.0 },
+        };
+        #endregion
     }
 }

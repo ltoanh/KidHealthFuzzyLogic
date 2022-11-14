@@ -26,10 +26,7 @@ namespace KidHealthFuzzyLogic
             InitializeComponent();
             InitListPoint();
 
-            FuzzificationChieuCao(Common.ChieuCao);
-            FuzzificationCanNang(Common.CanNang);
-            FuzzificationVDTH(Common.VDTH);
-            FuzzificationVDT(Common.VDT);
+            FuzzyLogic();
         }
         #endregion
 
@@ -65,6 +62,27 @@ namespace KidHealthFuzzyLogic
                 default:
                     break;
             }
+        }
+
+        /// <summary>
+        /// Tính toán dựa trên fuzzy logic
+        /// </summary>
+        private void FuzzyLogic()
+        {
+            // Mờ hóa
+            FuzzificationChieuCao(Common.ChieuCao);
+            FuzzificationCanNang(Common.CanNang);
+            FuzzificationVDTH(Common.VDTH);
+            FuzzificationVDT(Common.VDT);
+            
+            // Xây dựng tập luật
+            RuleForm rule = new RuleForm();
+            rule.CalculatorRuleValue();
+            DisplayRuleValue();
+            DrawRuleChart();
+
+            // Giải mờ
+
         }
         #endregion
 
@@ -402,6 +420,47 @@ namespace KidHealthFuzzyLogic
 
         }
 
+        /// <summary>
+        /// Vẽ đồ thị dựa trên tập luật
+        /// </summary>
+        /// <param name="position"></param>
+        private void DrawRuleChart()
+        {
+            // Vẽ đồ thị
+            chartRule.ChartAreas[0].AxisX.IsMarginVisible = false;
+            chartRule.ChartAreas[0].AxisY.IsMarginVisible = false;
+
+            var lsPointName = Common.lsPhatTrienName;
+            var lsPointRule = Common.lsPhatTrienPoint;
+            // lặp từng tập mờ để tính toán
+            foreach (var key in lsPointName.Keys.ToList())
+            {
+                var YValue = Common.lsPhatTrienResult[key];
+                var lineName = lsPointName[key];
+                chartRule.Series.Add(lineName);
+                chartRule.Series[lineName].ChartType = SeriesChartType.Line;
+                chartRule.Series[lineName].BorderWidth = 3;
+
+                chartRule.Series[lineName].Points.AddXY(lsPointRule[key][0], 0);
+                chartRule.Series[lineName].Points.AddXY(lsPointRule[key][1], YValue);
+                chartRule.Series[lineName].Points.AddXY(lsPointRule[key][2], 0);
+
+                // hiển thị kết quả đỉnh
+                if(YValue != 0)
+                {
+                    RectangleAnnotation tx1 = new RectangleAnnotation();
+                    tx1.Text = YValue.ToString("n2");
+                    tx1.BackColor = Color.Black;
+                    tx1.ForeColor = Color.White;
+                    tx1.AnchorOffsetY = 5;
+                    tx1.SetAnchor(chartRule.Series[lineName].Points[1]);
+                    chartRule.Annotations.Add(tx1);
+                }
+                
+            }
+           
+        }
+
         #endregion
 
         #region Mờ hóa
@@ -718,5 +777,68 @@ namespace KidHealthFuzzyLogic
 
         #endregion
 
+        #region Tập luật
+        /// <summary>
+        /// Tính toán kết quả dựa trên tập luật
+        /// </summary>
+        private void DisplayRuleValue()
+        {
+            // Kém
+            if (Common.lsPhatTrienRule["PT_K"].Count == 0)
+            {
+                txt_PT_K.Text = "0";
+            }
+            else
+            {
+                txt_PT_K.Text = String.Join(";", Common.lsPhatTrienRule["PT_K"]);
+                Common.lsPhatTrienResult["PT_K"] = Common.lsPhatTrienRule["PT_K"].Max();
+            }
+            // hơi kém
+            if (Common.lsPhatTrienRule["PT_HK"].Count == 0)
+            {
+                txt_PT_HK.Text = "0";
+            }
+            else
+            {
+                txt_PT_HK.Text = String.Join(";", Common.lsPhatTrienRule["PT_HK"]);
+                Common.lsPhatTrienResult["PT_HK"] = Common.lsPhatTrienRule["PT_HK"].Max();
+
+            }
+
+            // hơi tốt
+            if (Common.lsPhatTrienRule["PT_HT"].Count == 0)
+            {
+                txt_PT_HT.Text = "0";
+            }
+            else
+            {
+                txt_PT_HT.Text = String.Join(";", Common.lsPhatTrienRule["PT_HT"]);
+                Common.lsPhatTrienResult["PT_HT"] = Common.lsPhatTrienRule["PT_HT"].Max();
+            }
+
+            // tốt
+            if (Common.lsPhatTrienRule["PT_T"].Count == 0)
+            {
+                txt_PT_T.Text = "0";
+            }
+            else
+            {
+                txt_PT_T.Text = String.Join(";", Common.lsPhatTrienRule["PT_T"]);
+                Common.lsPhatTrienResult["PT_T"] = Common.lsPhatTrienRule["PT_T"].Max();
+            }
+        }
+
+        #endregion
+
+
+        #region Giải mờ
+
+        #endregion
+
+        private void btnShowRule_Click(object sender, EventArgs e)
+        {
+            RuleForm ruleForm = new RuleForm();
+            ruleForm.Show();
+        }
     }
 }
