@@ -54,10 +54,46 @@ namespace KidHealthFuzzyLogic
                     lsPointVDT = Common.lsVDTPoint2;
                     break;
                 case 3:
+                    if (Common.Gender == 0)
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNam3;
+                        lsPointCN = Common.lsCanNangPointNam3;
+                    }
+                    else
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNu3;
+                        lsPointCN = Common.lsCanNangPointNu3;
+                    }
+                    lsPointVDTH = Common.lsVDTHPoint3;
+                    lsPointVDT = Common.lsVDTPoint3;
                     break;
                 case 4:
+                    if (Common.Gender == 0)
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNam4;
+                        lsPointCN = Common.lsCanNangPointNam4;
+                    }
+                    else
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNu4;
+                        lsPointCN = Common.lsCanNangPointNu4;
+                    }
+                    lsPointVDTH = Common.lsVDTHPoint4;
+                    lsPointVDT = Common.lsVDTPoint4;
                     break;
                 case 5:
+                    if (Common.Gender == 0)
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNam5;
+                        lsPointCN = Common.lsCanNangPointNam5;
+                    }
+                    else
+                    {
+                        lsPointCC = Common.lsChieuCaoPointNu5;
+                        lsPointCN = Common.lsCanNangPointNu5;
+                    }
+                    lsPointVDTH = Common.lsVDTHPoint5;
+                    lsPointVDT = Common.lsVDTPoint5;
                     break;
                 default:
                     break;
