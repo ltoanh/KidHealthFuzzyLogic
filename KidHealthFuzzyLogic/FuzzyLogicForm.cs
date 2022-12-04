@@ -480,7 +480,17 @@ namespace KidHealthFuzzyLogic
                 chartRule.Series[lineName].BorderWidth = 3;
 
                 chartRule.Series[lineName].Points.AddXY(lsPointRule[key][0], 0);
-                chartRule.Series[lineName].Points.AddXY(lsPointRule[key][1], YValue);
+                if(lsPointRule[key][1] == 1)
+                {
+                    chartRule.Series[lineName].Points.AddXY(lsPointRule[key][1], YValue);
+                } else
+                {
+                    var x1 = (YValue * (lsPointRule[key][1] - lsPointRule[key][0]) + lsPointRule[key][0]);
+                    var x2 = (lsPointRule[key][2] - YValue * (lsPointRule[key][2] - lsPointRule[key][1]));
+                    chartRule.Series[lineName].Points.AddXY(x1, YValue);
+                    chartRule.Series[lineName].Points.AddXY(x2, YValue);
+
+                }
                 chartRule.Series[lineName].Points.AddXY(lsPointRule[key][2], 0);
 
                 // hiển thị kết quả đỉnh
@@ -961,6 +971,7 @@ namespace KidHealthFuzzyLogic
                 }
             }
 
+            // loại bỏ kí tự + ở cuối
             txtDefuzzyTS.Text = defuzzyTSString.Remove(defuzzyTSString.Length - 1);
             txtDefuzzyMS.Text = defuzzyMSString.Remove(defuzzyMSString.Length - 1);
 
