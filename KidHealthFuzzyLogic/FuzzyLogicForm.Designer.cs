@@ -91,9 +91,9 @@ namespace KidHealthFuzzyLogic
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 13);
+            this.label2.Size = new System.Drawing.Size(161, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "f = { Không tốt, Kém, Hơi tốt, Tốt }";
+            this.label2.Text = "f = { Kém, Hơi kém, Hơi tốt, Tốt }";
             // 
             // label3
             // 
@@ -318,7 +318,7 @@ namespace KidHealthFuzzyLogic
             this.groupBox3.Size = new System.Drawing.Size(422, 446);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Giải mờ theo trọng tâm";
+            this.groupBox3.Text = "Giải mờ theo trung bình trọng số";
             // 
             // chartResult
             // 
@@ -422,7 +422,7 @@ namespace KidHealthFuzzyLogic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 817);
+            this.ClientSize = new System.Drawing.Size(1166, 817);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

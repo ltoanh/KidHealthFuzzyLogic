@@ -208,7 +208,7 @@ namespace KidHealthFuzzyLogic
             {"VDTH_BT", new List<double>(){ 40, 45, 60 } },
         };
 
-        // 4. Vận động tinh: Rất kém (VDTH_RK), Kém (VDTH_K), Bình thường (VDTH_BT)
+        // 4. Vận động tinh: Rất kém (VDT_RK), Kém (VDT_K), Bình thường (VDT_BT)
         // Tọa độ điểm: 
         public static Dictionary<string, List<double>> lsVDTPoint2 = new Dictionary<string, List<double>>(){
             {"VDT_RK", new List<double>(){ 0, 33, 35 } },
