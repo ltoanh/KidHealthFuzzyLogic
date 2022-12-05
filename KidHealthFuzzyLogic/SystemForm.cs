@@ -98,10 +98,12 @@ namespace KidHealthFuzzyLogic
             if (VDTH_rb_C_1.Checked)
             {
                 result += 10;
-            } else if (VDTH_rb_DK_1.Checked)
+            }
+            else if (VDTH_rb_DK_1.Checked)
             {
                 result += 5;
-            } else if (VDTH_rb_H_1.Checked)
+            }
+            else if (VDTH_rb_H_1.Checked)
             {
                 result += 0;
             }
@@ -189,10 +191,12 @@ namespace KidHealthFuzzyLogic
             if (VDT_rb_C_1.Checked)
             {
                 result += 10;
-            } else if (VDT_rb_DK_1.Checked)
+            }
+            else if (VDT_rb_DK_1.Checked)
             {
                 result += 5;
-            } else if (VDT_rb_H_1.Checked)
+            }
+            else if (VDT_rb_H_1.Checked)
             {
                 result += 0;
             }
@@ -270,22 +274,31 @@ namespace KidHealthFuzzyLogic
             btnExecute.Enabled = false;
             try
             {
+                if (string.IsNullOrEmpty(txtChieuCao.Text))
+                {
+                    throw new Exception("Chiều cao không được để trống.");
+                }
+
+                if (string.IsNullOrEmpty(txtCanNang.Text))
+                {
+                    throw new Exception("Cân nặng không được để trống.");
+                }
                 Common.ChieuCao = Double.Parse(txtChieuCao.Text.Trim());
                 Common.CanNang = Double.Parse(txtCanNang.Text.Trim());
 
-                if(Common.ChieuCao <= 0)
+                if (Common.ChieuCao <= 0)
                 {
                     throw new Exception("Chiều cao phải lớn hơn 0cm");
                 }
 
-                if(Common.CanNang <= 0)
+                if (Common.CanNang <= 0)
                 {
                     throw new Exception("Cân nặng phải lớn hơn 0kg");
                 }
 
-            // tính các chỉ số
-            CalcVanDongTho();
-            CalcVanDongTinh();
+                // tính các chỉ số
+                CalcVanDongTho();
+                CalcVanDongTinh();
 
                 FuzzyLogicForm fuzzyForm = new FuzzyLogicForm();
                 fuzzyForm.Show();
