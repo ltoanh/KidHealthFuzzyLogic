@@ -23,6 +23,7 @@ namespace KidHealthFuzzyLogic
         #region Constructor
         public FuzzyLogicForm()
         {
+            ClearData();
             InitializeComponent();
             InitListPoint();
 
@@ -31,6 +32,18 @@ namespace KidHealthFuzzyLogic
         #endregion
 
         #region Method
+        private void ClearData()
+        {
+            foreach (var item in Common.lsPhatTrienRule.ToList())
+            {
+                item.Value.Clear();
+            }
+            foreach (var key in Common.lsPhatTrienDefuzzy.Keys.ToList())
+            {
+                Common.lsPhatTrienDefuzzy[key] = 0.0;
+            }
+        }
+
         /// <summary>
         /// Khởi tạo các tọa độ điểm liên quan
         /// </summary>
@@ -521,16 +534,32 @@ namespace KidHealthFuzzyLogic
             var lsPointName = Common.lsPhatTrienName;
             var lsPointRule = Common.lsPhatTrienPoint;
             // lặp từng tập mờ để tính toán
+            var index = 1;
             foreach (var key in lsPointName.Keys.ToList())
             {
                 var lineName = lsPointName[key];
                 chartResult.Series.Add(lineName);
                 chartResult.Series[lineName].ChartType = SeriesChartType.Line;
                 chartResult.Series[lineName].BorderWidth = 3;
-
-                chartResult.Series[lineName].Points.AddXY(lsPointRule[key][0], 0);
+                
+                if(index == 1)
+                {
+                    chartResult.Series[lineName].Points.AddXY(lsPointRule[key][0], 1);
+                }
+                else
+                {
+                    chartResult.Series[lineName].Points.AddXY(lsPointRule[key][0], 0);
+                }
                 chartResult.Series[lineName].Points.AddXY(lsPointRule[key][1], 1);
-                chartResult.Series[lineName].Points.AddXY(lsPointRule[key][2], 0);
+                if(index == lsPointName.Count)
+                {
+                    chartResult.Series[lineName].Points.AddXY(lsPointRule[key][2], 1);
+                }
+                else
+                {
+                    chartResult.Series[lineName].Points.AddXY(lsPointRule[key][2], 0);
+                }
+                index++;
 
             }
 
@@ -1008,25 +1037,37 @@ namespace KidHealthFuzzyLogic
         {
             var lsPointDefuzzy = Common.lsPhatTrienPoint;
             // lặp từng tạp mờ để tính toán
+            var index = 1;
             foreach (var key in lsPointDefuzzy.Keys.ToList())
             {
                 if (lsPointDefuzzy[key][0] < position && position < lsPointDefuzzy[key][1])
                 {
-                    Common.lsPhatTrienResult[key] = Math.Round(1.0 * (position - lsPointDefuzzy[key][0]) / (lsPointDefuzzy[key][1] - lsPointDefuzzy[key][0]), 2);
+                    if (index == 1)
+                    {
+                        Common.lsPhatTrienResult[key] = 1;
+                    }
+                    else
+                    {
+                        Common.lsPhatTrienResult[key] = Math.Round(1.0 * (position - lsPointDefuzzy[key][0]) / (lsPointDefuzzy[key][1] - lsPointDefuzzy[key][0]), 2);
+                    }
                 }
-                else if (lsPointDefuzzy[key][1] < position && position < lsPointDefuzzy[key][2])
+                else if (lsPointDefuzzy[key][1] <= position && position <= lsPointDefuzzy[key][2])
                 {
-                    Common.lsPhatTrienResult[key] = Math.Round(1.0 * (lsPointDefuzzy[key][2] - position) / (lsPointDefuzzy[key][2] - lsPointDefuzzy[key][1]), 2);
-                }
-                else if (lsPointDefuzzy[key][1] == position)
-                {
-                    Common.lsPhatTrienResult[key] = 1;
+                    if (index == lsPointDefuzzy.Count)
+                    {
+                        Common.lsPhatTrienResult[key] = 1;
+                    }
+                    else
+                    {
+                        Common.lsPhatTrienResult[key] = Math.Round(1.0 * (lsPointDefuzzy[key][2] - position) / (lsPointDefuzzy[key][2] - lsPointDefuzzy[key][1]), 2);
+                    }
                 }
                 else
                 {
                     Common.lsPhatTrienResult[key] = 0;
 
                 }
+                index++;
             }
             // hiển thị kết quả textbox
             DisplayTextBoxResult();
